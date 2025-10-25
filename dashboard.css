@@ -1,0 +1,244 @@
+/* VARIABLES GLOBALES */
+:root {
+    --color-dark: #000022;        /* Oxford Blue */
+    --color-sidebar: #001242;     /* Azul Oscuro de tu Sidebar */
+    --color-accent: #0094C6;      /* Cyan Brillante */
+    --color-light: #FFFFFF;
+    --color-background: #F4F7FC;  /* Fondo Gris Suave de tu Figma */
+    --color-gray-text: #4c4c4c;
+}
+
+/* RESET y Configuración Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+}
+
+/* ---------------------------------
+   1. LAYOUT PRINCIPAL (CSS GRID)
+   --------------------------------- */
+.app-layout {
+    display: grid;
+    /* 1ª columna: Sidebar (250px). 2ª columna: Contenido (el resto, 1fr) */
+    grid-template-columns: 250px 1fr;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* ---------------------------------
+   2. SIDEBAR (250px)
+   --------------------------------- */
+.sidebar {
+    background-color: var(--color-sidebar);
+    color: var(--color-light);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    /* Ocupa toda la altura del layout */
+    grid-column: 1 / 2;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    text-decoration: none;
+    color: var(--color-light);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.material-icons {
+    margin-right: 10px;
+}
+
+/* ---------------------------------
+   3. CONTENIDO PRINCIPAL y TOP BAR
+   --------------------------------- */
+.main-content {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px; /* Altura de tu diseño */
+    background-color: var(--color-light);
+    padding: 0 30px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botón Añadir Tarea */
+.add-task-btn {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-task-btn:hover {
+    background-color: #00668F;
+}
+
+/* Búsqueda */
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 300px;
+}
+
+.search-icon {
+    color: #999;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+/* ---------------------------------
+   4. TAREA INDIVIDUAL (TASK CARD)
+   --------------------------------- */
+.tasks-container {
+    padding: 30px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 75px;
+}
+
+.task-card {
+    background-color: var(--color-light);
+    padding: 20px;
+    border-radius: 8px;
+    /* La sombra que diseñaste en Figma */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-title {
+    font-size: 18px;
+    color: var(--color-dark);
+}
+
+.task-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Colores de tu etiqueta 'Pendiente' */
+.status-pending {
+    background-color: #FFFBEA; /* Amarillo pálido */
+    color: #EAB543; /* Amarillo oscuro */
+}
+/* Colores para Tareas Completadas */
+.status-completed {
+    background-color: #E6F7E9; /* Verde pálido */
+    color: #388E3C; /* Verde oscuro */
+}
+
+/* Colores para Tareas En Progreso */
+.status-in-progress {
+    background-color: #EAF7FF; /* Azul pálido */
+    color: #1976D2; /* Azul medio */
+}
+.task-description {
+    font-size: 14px;
+    color: var(--color-gray-text);
+    margin-bottom: 20px;
+}
+
+.card-actions {
+    margin-top: auto; /* Empuja las acciones al final de la tarjeta */
+    text-align: right;
+}
+
+.icon-edit, .icon-delete {
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    margin-left: 10px;
+    transition: color 0.2s;
+}
+
+.icon-edit:hover {
+    color: var(--color-accent);
+}
+
+.icon-delete:hover {
+    color: #e74c3c; /* Rojo para eliminar */
+}
+
+/* Estilo para el contenedor del logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; /* Separación del menú */
+    /* Añadimos un padding para que el logo no se pegue al borde superior si es necesario */
+    padding-top: 20px; 
+}
+
+/* 2. ESTILO CLAVE PARA HACER LA IMAGEN CIRCULAR */
+.circular-logo {
+    /* Forzar un tamaño cuadrado para que el border-radius funcione */
+    width: 80px; 
+    height: 80px; 
+    
+    /* 🛑 ESTO ES LO QUE HACE EL CÍRCULO */
+    border-radius: 50%; 
+    
+    /* Asegurar que la imagen no se estire y cubra el círculo */
+    object-fit: cover; 
+    
+    /* Opcional: Un pequeño borde blanco si tu imagen lo necesita */
+    border: 3px solid white; 
+}

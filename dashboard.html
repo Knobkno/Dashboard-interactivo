@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex KX | Dashboard de Tareas</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="app-layout"> 
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logoalexkx.png" alt="Logo Alex KX" class="circular-logo">
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active"><span class="material-icons">dashboard</span> Dashboard</a>
+                <a href="#" class="nav-item"><span class="material-icons">list</span> Tareas</a>
+                <a href="#" class="nav-item"><span class="material-icons">settings</span> Configuración</a>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+    
+    <header class="top-bar">
+        <div class="search-box">
+            <span class="material-icons search-icon">search</span>
+            <input type="text" id="searchInput" placeholder="Buscar tareas...">
+        </div>
+        <div class="header-actions">
+            <button class="add-task-btn" id="addTaskBtn">+ AÑADIR TAREA</button>
+            <div class="avatar">A</div>
+        </div>
+    </header>
+    
+    <section class="tasks-container" id="tasksContainer">
+        
+        <div class="task-card">
+            <div class="card-header">
+                <h3 class="task-title">Diseñar el Task Card en Figma</h3>
+                <span class="task-status status-pending">PENDIENTE</span>
+            </div>
+            <p class="task-description">Definir layout, colores y espaciado de los iconos de acción.</p>
+            <div class="card-actions">
+                <span class="material-icons icon-edit">edit</span>
+                <span class="material-icons icon-delete">delete</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <div class="card-header">
+                <h3 class="task-title">Codificar Layout Principal (Grid)</h3>
+                <span class="task-status status-completed">COMPLETADO</span>
+            </div>
+            <p class="task-description">Asegurar Sidebar, Top Bar y Task Card con CSS.</p>
+            <div class="card-actions">
+                <span class="material-icons icon-edit">edit</span>
+                <span class="material-icons icon-delete">delete</span>
+            </div>
+        </div>
+        
+        <div class="task-card">
+            <div class="card-header">
+                <h3 class="task-title">Implementar Lógica JS</h3>
+                <span class="task-status status-in-progress">EN PROGRESO</span>
+            </div>
+            <p class="task-description">Función para añadir, editar y eliminar tareas dinámicamente.</p>
+            <div class="card-actions">
+                <span class="material-icons icon-edit">edit</span>
+                <span class="material-icons icon-delete">delete</span>
+            </div>
+        </div>
+        
+    </section>
+    
+</main>
+    <script src="dashboard.js"></script> 
+</body>
+</html>
